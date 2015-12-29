@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="enshu_20151125" name="append" type="append.swi"
+  args=' -t "my_append("[a,b,c]", "[d,e,f]", X)."' />
+  <node pkg="enshu_20151125" name="like" type="like.swi"
+  args=' -t "like(X,Y)."' />
+</launch>

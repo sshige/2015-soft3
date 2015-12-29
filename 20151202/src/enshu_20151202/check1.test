@@ -1,0 +1,3 @@
+<launch>
+  <test pkg="enshu_20151202" test-name="GCTest_cpp" type="GCTest" />
+</launch>

@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="enshu_20151118" name="sample_xml" type="sample.py" />
+</launch>

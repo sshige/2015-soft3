@@ -1,0 +1,10 @@
+<launch>
+  <node pkg="enshu_20151118" name="talker" type="talker.l" />
+  <node pkg="enshu_20151118" name="listener" type="listener.l" />
+
+  <param name="test/topic" value="chatter" />
+  <param name="test/hz" value="100.0" />
+  <param name="test/hzerror" value="10" />
+  <param name="test/test_duration" value="5.0" />
+  <test test-name="talker_listener" pkg="rostest" type="hztest" name="test" />
+</launch>

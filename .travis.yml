@@ -21,13 +21,16 @@ install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq -y ros-hydro-desktop ros-hydro-roscpp-tutorials ros-hydro-rostest ros-hydro-catkin python-catkin-tools
   - sudo apt-get install -qq -y ros-hydro-roseus
+  - sudo apt-get install -qq -y liborbit2 liborbit2-dev
+  - sudo apt-get install -qq -y swi-prolog
   - source /opt/ros/hydro/setup.bash
 before_script:
   - ls
-  - for dir in 20*; do echo "checking $dir"; pkg_dir=`catkin_topological_order $dir`; pkg="${pkg_dir% *}"; src="${pkg_dir##* }"; if [ -e "$dir/$src" ] ; then cp $dir/check*.* $dir/$src; fi; done;
+  - for dir in 20*; do echo "checking $dir"; pkg_dir=`catkin_topological_order $dir`; pkg="${pkg_dir% *}"; src="${pkg_dir##* }"; check=`ls $dir/check*.* 2>/dev/null`; if [ -e "$dir/$src" -a "$check" ] ; then cp $dir/check*.* $dir/$src; fi; done;
+  - find . -iname *.test
   - rdir=`pwd`
 script:
-  - for dir in 20*; do echo "checking $dir"; pkg_dir=`catkin_topological_order $dir`; pkg="${pkg_dir% *}"; src="${pkg_dir##* }"; if [ -e "$dir/$src" ] ; then source /opt/ros/hydro/setup.bash; cd $dir; catkin build -v -i; source devel/setup.bash; rospack list; cd $src; EXIT_STATUS=0; for test_file in check*.test; do rostest $pkg $test_file || EXIT_STATUS=1; done; cd $rdir; fi; done; [ $EXIT_STATUS == 0 ]
+  - for dir in 20*; do echo "checking $dir"; pkg_dir=`catkin_topological_order $dir`; pkg="${pkg_dir% *}"; src="${pkg_dir##* }"; check=`ls $dir/check*.* 2>/dev/null`; if [ -e "$dir/$src" -a "$check" ] ; then source /opt/ros/hydro/setup.bash; cd $dir; catkin build -v -i; source devel/setup.bash; rospack list; cd $src; EXIT_STATUS=0; for test_file in check*.test; do rostest $pkg $test_file || EXIT_STATUS=1; done; cd $rdir; fi; done; [ $EXIT_STATUS == 0 ]
 after_failure:
   - find src/ -type d -name .git -prune -o -type f -exec ls -l {} \;
   - rostest -t beginner_tutorials check1.test

@@ -1,0 +1,9 @@
+<launch>
+  <node pkg="enshu_20151118" name="server" type="echo-server"
+        launch-prefix="xterm -e"
+        args="-ORBInitRef NameService=corbaloc:iiop:127.0.0.1:2809/NameService" />
+  <node pkg="enshu_20151118" name="client" type="echo-client"
+        launch-prefix="xterm -e"
+        args="-ORBInitRef NameService=corbaloc:iiop:127.0.0.1:2809/NameService" />
+
+</launch>

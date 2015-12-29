@@ -1,0 +1,10 @@
+#!/usr/bin/env prolog
+
+% check with
+% prolog -f ./append.swi -t 'my_append("[a,b,c]", "[d,e,f]", X).'
+
+
+my_append([a,b,c], [d,e,f], X).
+% X == [a,b,c,f,e,f].
+
+

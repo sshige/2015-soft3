@@ -1,0 +1,8 @@
+#!/usr/bin/env prolog
+
+% check with
+% prolog -f ./like.swi -t 'like(X,Y).'
+
+
+
+

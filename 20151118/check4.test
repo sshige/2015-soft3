@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="enshu_20151118" name="talker" type="zeromq_pub.py" />
+  <node pkg="enshu_20151118" name="listener" type="zeromq_sub.py" />
+
+</launch>
