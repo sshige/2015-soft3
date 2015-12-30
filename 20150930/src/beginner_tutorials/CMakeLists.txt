@@ -6,6 +6,7 @@ project(beginner_tutorials)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
+   geometry_msgs
   message_generation
   message_runtime
   roscpp
@@ -71,6 +72,7 @@ find_package(catkin REQUIRED COMPONENTS
 # generate_messages(
 #   DEPENDENCIES
 #   geometry_msgs#   std_msgs
+#    geometry_msgs#   std_msgs
 # )
 
 ################################################
@@ -108,6 +110,7 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES beginner_tutorials
 #  CATKIN_DEPENDS geometry_msgs message_generation message_runtime roscpp rospy std_msgs
+#  CATKIN_DEPENDS  geometry_msgs message_generation message_runtime roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
@@ -195,4 +198,8 @@ include_directories(
 add_executable(listener src/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
 add_executable(listener2 src/listener.cpp)
+target_link_libraries(listener2 ${catkin_LIBRARIES})
+#add_executable(listener src/listener.cpp)
+#target_link_libraries(listener ${catkin_LIBRARIES})
+#add_executable(listener2 src/listener2.cpp)
 target_link_libraries(listener2 ${catkin_LIBRARIES})
