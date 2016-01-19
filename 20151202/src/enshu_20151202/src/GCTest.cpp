@@ -5,6 +5,8 @@
 #include <string.h>
 #include <pthread.h>
 #include <sys/time.h>
+#include <memory>
+#include <boost/shared_ptr.hpp>
 
 using namespace std;
 
@@ -40,8 +42,8 @@ bool do_delete = true;
 
 
 typedef vector<int> Elem;
-typedef vector<int>* ElemPtr;
-typedef vector<ElemPtr>* ElemPtrVec;
+typedef boost::shared_ptr<Elem> ElemPtr;
+typedef boost::shared_ptr<vector<ElemPtr> > ElemPtrVec;
 
 class Mutator : public Thread {
   bool loop;
