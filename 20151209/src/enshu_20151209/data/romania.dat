@@ -1,0 +1,23 @@
+# Romanian Cities and Road Network Graph
+# (See Russell & Norvig  Chapter 3 )
+#
+Oradea Zerind Sibiu
+Arad Zerind Sibiu Timisoara
+Zerind Arad Oradea
+Timisoara Arad Lugoj
+Sibiu Oradea Arad Fagaras Rimnicu-Vilcea
+Lugoj Timisoara Mehadia
+Mehadia Lugoj Dobreta
+Dobreta Mehadia Craiova
+Craiova Rimnicu-Vilcea Pitesti Dobreta
+Pitesti Rimnicu-Vilcea Craiova Bucharest
+Rimnicu-Vilcea Sibiu Craiova Pitesti
+Fagaras Sibiu Bucharest
+Bucharest Fagaras Giurgiu Urziceni Pitesti
+Giurgiu Bucharest
+Urziceni Bucharest Hirsova Vaslui
+Vaslui Iasi Urziceni
+Iasi Neamt Vaslui
+Neamt Iasi
+Hirsova Urziceni Eforie
+Eforie Hirsova

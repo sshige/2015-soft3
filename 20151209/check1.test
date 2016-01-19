@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="enshu_20151209" name="graphsearch" type="graphsearch"
+        args="-i $(find enshu_20151209)/data/romania.dat" />
+</launch>

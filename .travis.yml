@@ -22,6 +22,7 @@ install:
   - sudo apt-get install -qq -y ros-hydro-desktop ros-hydro-roscpp-tutorials ros-hydro-rostest ros-hydro-catkin python-catkin-tools
   - sudo apt-get install -qq -y ros-hydro-roseus
   - sudo apt-get install -qq -y liborbit2 liborbit2-dev
+  - sudo apt-get install -qq -y ros-hydro-move-base-msgs
   - sudo apt-get install -qq -y swi-prolog
   - source /opt/ros/hydro/setup.bash
 before_script:
