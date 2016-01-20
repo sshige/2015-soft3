@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="enshu_20151118" name="talker" type="talker.l" />
+  <node pkg="enshu_20151118" name="listener" type="listener.l" />
+</launch>		

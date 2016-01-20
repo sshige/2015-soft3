@@ -14,6 +14,7 @@ class EchoImpl extends EchoApp.EchoPOA{
     }
     // implement echoString() method
     public void echoString(String input){
+	System.err.println(">> " + input);
     }
     // implement shutdown() method
     public void shutdown(){
